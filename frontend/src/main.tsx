@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Helmet from 'react-helmet-async'
-import { AppRouter } from './Router'
-import './index.css'
+import 'the-new-css-reset/css/reset.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

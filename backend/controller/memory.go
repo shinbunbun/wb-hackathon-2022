@@ -25,3 +25,13 @@ func MemoryPost(c *gin.Context) {
 	res := model.Empty{}
 	c.JSON(200, res)
 }
+
+func MemoryGet(c *gin.Context) {
+	label := c.Param("label")
+
+	res := model.MemoryGetRes{
+		ImageUrls: MemoryMap[label],
+	}
+
+	c.JSON(200, res)
+}

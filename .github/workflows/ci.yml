@@ -32,8 +32,6 @@ jobs:
         with:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-      - name: cd
-        run: cd backend
       - name: Build
         run: go build -v ./...
       - name: Test

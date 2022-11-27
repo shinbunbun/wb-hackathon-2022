@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - working-directory: backend
       - name: golangci-lint
-        working-directory: backend
         uses: golangci/golangci-lint-action@v2
         with:
           version: v1.49.0

@@ -6,23 +6,24 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        submodules: recursive
+    defaults:
+      run:
         working-directory: frontend
+    steps:
+      - uses: actions/checkout@v2
+        with:
 
-    - name: Cache .npm
-      id: dot_npm_cache_id
-      uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: $${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Cache .npm
+        id: dot_npm_cache_id
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: $${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
-    - name: Install npm dependencies
-      run: |
-        npm ci
+      - name: Install npm dependencies
+        run: |
+          npm ci
 
-    - name: Run ESLint
-      run: |
-        npm run lint
+      - name: Run ESLint
+        run: |
+          npm run lint

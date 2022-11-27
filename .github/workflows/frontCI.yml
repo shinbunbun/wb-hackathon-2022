@@ -23,10 +23,6 @@ jobs:
       run: |
         npm ci
 
-    - name: Generate from swagger
-      run: |
-        npm run generate:api
-
     - name: Run ESLint
       run: |
         npm run lint

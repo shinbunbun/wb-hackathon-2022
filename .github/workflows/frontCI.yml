@@ -1,0 +1,32 @@
+name: frontCI
+
+on:
+  push:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+        working-directory: frontend
+
+    - name: Cache .npm
+      id: dot_npm_cache_id
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: $${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+    - name: Install npm dependencies
+      run: |
+        npm ci
+
+    - name: Generate from swagger
+      run: |
+        npm run generate:api
+
+    - name: Run ESLint
+      run: |
+        npm run lint

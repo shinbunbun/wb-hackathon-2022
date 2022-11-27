@@ -11,7 +11,6 @@ jobs:
         working-directory: frontend
     steps:
       - uses: actions/checkout@v2
-        with:
 
       - name: Cache .npm
         id: dot_npm_cache_id

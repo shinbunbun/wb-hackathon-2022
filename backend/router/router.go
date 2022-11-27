@@ -13,5 +13,6 @@ func Route() *gin.Engine {
 
 	r.GET("/ping", controller.PingGet)
 	r.POST("/ping", controller.PingPost)
+	r.POST("/memory", controller.MemoryPost)
 	return r
 }

@@ -5,15 +5,13 @@ jobs:
 
   go-lint:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: backend
     steps:
       - uses: actions/checkout@v2
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v2
         with:
           version: v1.49.0
+          working-directory: backend
 
   go-test:
     runs-on: ubuntu-latest

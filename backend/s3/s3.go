@@ -18,7 +18,9 @@ func init() {
 
 	ses := session.Must(session.NewSession())
 
-	s3vc := s3.New(ses)
+	s3vc := s3.New(ses, &aws.Config{
+		Region: aws.String("ap-northeast-1"),
+	})
 
 	Uploader = s3manager.NewUploaderWithClient(s3vc)
 }

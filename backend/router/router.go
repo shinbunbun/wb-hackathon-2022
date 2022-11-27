@@ -15,5 +15,6 @@ func Route() *gin.Engine {
 	r.POST("/ping", controller.PingPost)
 	r.POST("/memory", controller.MemoryPost)
 	r.GET("/memory/:label", controller.MemoryGet)
+	r.POST("/check-image-label", controller.CheckImageLabelPost)
 	return r
 }

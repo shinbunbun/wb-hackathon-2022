@@ -11,4 +11,8 @@ export const page = style({
 })
 export const pageInner = style({
   margin: 'auto',
+  flexDirection: "column",
+  gap: '32px',
+  display: 'flex',
+  alignItems: 'center',
 })

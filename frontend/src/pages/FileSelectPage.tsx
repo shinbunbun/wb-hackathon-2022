@@ -1,14 +1,21 @@
 import { useApiUrl } from '@/main'
 import { Page } from '@/util/components/Page'
 import { useFileToBase64 } from '@/util/hooks/useFileToBase64'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FileUploadPage } from './FileUploadPage'
 import { ResultPage } from './ResultPage'
 import rec from '../assets/rec01.png'
 import scan from '../assets/scan01.png'
 import title from '../assets/title01.png'
+import { Start } from './Start'
 
 export const FileSelectPage: React.FC = () => {
+  const [start, setStart] = useState(true)
+  useEffect(() => {
+    setTimeout(() => {
+      setStart(false)
+    }, 3000)
+  }, [])
   const [file, setFile] = useState<File | null>()
   const [data, setData] = useState<{
     imageUrl: string
@@ -40,6 +47,10 @@ export const FileSelectPage: React.FC = () => {
         })
       )
       .catch((e) => console.log(e))
+  }
+
+  if (start) {
+    return <Start />
   }
 
   if (data && method === 'tumugu') {

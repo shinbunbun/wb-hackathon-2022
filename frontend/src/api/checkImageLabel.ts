@@ -13,5 +13,11 @@ export const checkImageLabel = async (
       image: base64Image,
     }),
   })
-  return (await res.json()) as CheckImageLabelResponse
+
+  const result = await res.json()
+
+  return ({
+    imageUrl: result.image_url,
+    labels: result.labels,
+  }) as CheckImageLabelResponse
 }

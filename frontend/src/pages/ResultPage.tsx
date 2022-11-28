@@ -26,14 +26,15 @@ export const ResultPage: React.FC<{
       const res = await fetch(apiUrl + '/memory/' + targetLabel, {
         method: 'GET',
       })
-      const result = await res.json()
-      console.log(result)
+      const result = (await res.json()) as {
+        imageUrls: string[]
+      }
 
       setImageUrls(result.imageUrls)
     }
 
-    fetcher()
-  }, [labels])
+    fetcher().catch((e) => console.log(e))
+  }, [labels, apiUrl, imageUrl])
 
   return (
     <Page>

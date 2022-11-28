@@ -6,7 +6,7 @@ import { AppRouter } from '@/Router'
 
 const ApiUrlContext = createContext(import.meta.env.VITE_API_URL)
 
-export const useApiUrl = () => useContext(ApiUrlContext)
+export const useApiUrl = (): string => useContext(ApiUrlContext)
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

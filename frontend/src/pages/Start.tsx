@@ -1,9 +1,9 @@
-import { logo, start } from './Start.css'
+import { Page } from '@/util/components/Page'
 
 export const Start: React.FC = () => {
   return (
-    <div className={start}>
-      <div className={logo}>ものいで</div>
-    </div>
+    <Page>
+      <img src="/src/assets/logo01.png" />
+    </Page>
   )
 }

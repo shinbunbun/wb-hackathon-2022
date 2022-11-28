@@ -16,8 +16,8 @@ export const checkImageLabel = async (
 
   const result = await res.json()
 
-  return ({
+  return {
     imageUrl: result.image_url,
     labels: result.labels,
-  }) as CheckImageLabelResponse
+  } as CheckImageLabelResponse
 }

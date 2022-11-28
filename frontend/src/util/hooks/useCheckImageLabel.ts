@@ -1,7 +1,5 @@
 import { checkImageLabel } from '@/api/checkImageLabel'
-import { useApiUrl } from '@/main'
 import { useEffect, useState } from 'react'
-import { useFileToBase64 } from './useFileToBase64'
 
 export const useCheckImageLabel = (
   apiUrl: string,
@@ -30,7 +28,7 @@ export const useCheckImageLabel = (
     }
 
     hoge().catch((e): void => console.log(e))
-  }, [base64Image])
+  }, [base64Image, apiUrl])
 
   return {
     loading,

@@ -1,5 +1,3 @@
-import { fileToBase64 } from '@/util/lib/fileToBase64'
-
 type CheckImageLabelResponse = {
   labels: string[]
   imageUrl: string
@@ -7,12 +5,12 @@ type CheckImageLabelResponse = {
 
 export const checkImageLabel = async (
   baseUrl: string,
-  image: File
+  base64Image: string
 ): Promise<CheckImageLabelResponse> => {
   const res = await fetch(baseUrl + '/check-image-label', {
     method: 'POST',
     body: JSON.stringify({
-      image: await fileToBase64(image),
+      image: base64Image,
     }),
   })
   return (await res.json()) as CheckImageLabelResponse

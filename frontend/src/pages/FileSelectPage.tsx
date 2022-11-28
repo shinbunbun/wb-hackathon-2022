@@ -4,6 +4,9 @@ import { useFileToBase64 } from '@/util/hooks/useFileToBase64'
 import { useState } from 'react'
 import { FileUploadPage } from './FileUploadPage'
 import { ResultPage } from './ResultPage'
+import rec from '../assets/rec01.png'
+import scan from '../assets/scan01.png'
+import title from '../assets/title01.png'
 
 export const FileSelectPage: React.FC = () => {
   const [file, setFile] = useState<File | null>()
@@ -63,15 +66,11 @@ export const FileSelectPage: React.FC = () => {
 
   return (
     <Page>
-      <img
-        src="/src/assets/title01.png"
-        style={{ margin: 'auto' }}
-        alt="title"
-      />
+      <img src={title} style={{ margin: 'auto' }} alt="title" />
       <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <button>
-            <img src="/src/assets/rec01.png" alt="rec" />
+            <img src={scan} alt="rec" />
           </button>
           <input
             type="file"
@@ -86,7 +85,7 @@ export const FileSelectPage: React.FC = () => {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <button>
-            <img src="/src/assets/scan01.png" alt="scan" />
+            <img src={rec} alt="scan" />
           </button>
           <input
             type="file"

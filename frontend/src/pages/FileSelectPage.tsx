@@ -81,7 +81,7 @@ export const FileSelectPage: React.FC = () => {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <button>
-            <img src={scan} alt="rec" />
+            <img src={rec} alt="rec" />
           </button>
           <input
             type="file"
@@ -96,7 +96,7 @@ export const FileSelectPage: React.FC = () => {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <button>
-            <img src={rec} alt="scan" />
+            <img src={scan} alt="scan" />
           </button>
           <input
             type="file"

@@ -8,3 +8,11 @@ declare module '*.svg' {
   // eslint-disable-next-line import/no-default-export
   export default src
 }
+
+interface ImportMetaEnv {
+  readonly VITE_API_URL: string
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}
